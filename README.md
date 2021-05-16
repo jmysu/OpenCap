@@ -12,7 +12,7 @@ Adjust your filters under main/helper/_ProcessingFrame.cpp...<br>
 
 ## References <br>
   -[QtEVM](https://github.com/wzpan/QtEVM) Qt EVM. <br>
-  -[RVM](kontakt@jens-schindel.de) Realtime Video Magnification. <br>
+  -[RVM](https://github.com/tschnz/Live-Video-Magnification) Realtime Video Magnification. <br>
   -[RangeSlider](https://github.com/nasafix-nasser/Qt-RangeSlider/) TwoWay Qt RangeSlider. <br>
-  -[OpenCV Multithread Capture](<https://github.com/nickdademo/qt-opencv-multithreaded) MultiThreaded OpenCV capture! <br>
+  -[OpenCV Multithread Capture](https://github.com/nickdademo/qt-opencv-multithreaded) MultiThreaded OpenCV capture! <br>
   
