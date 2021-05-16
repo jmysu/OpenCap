@@ -6,7 +6,7 @@
 Adjust your filters under main/helper/_ProcessingFrame.cpp...<br>
 Currently w/ Gray, Flip, Blur, Dilate, Erode, Canny, HSV segment/Histogram, MacBeth colorcheck, PCA, GrabCut <br>
 
-<img src="pic/OpenCap0516.gif" width=320>
+<img src="pic/OpenCapMac.png" width=320> <img src="pic/OpenCap0516.gif" width=320>
 
 
 <br>
