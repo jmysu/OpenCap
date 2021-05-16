@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main/image/appbar.check.png</file>
+        <file>main/image/appbar.close.png</file>
+        <file>main/image/appbar.control.pause.png</file>
+        <file>main/image/appbar.control.play.png</file>
+        <file>main/image/86-camera.png</file>
+        <file>main/image/PlayVideo.png</file>
+        <file>main/image/OpenCap.ico</file>
+        <file>main/image/Send.png</file>
+        <file>main/image/320pxSMPTE.png</file>
+    </qresource>
+</RCC>
