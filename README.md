@@ -2,7 +2,7 @@
 ### OpenCV4 Capture Utility w/ QT5
 <br>
 Application for tuning OpenCV4 filters, with Qt5...<br>
-<img src="pic/OpenCap0516.gif" width=320>  width=320>
+<img src="pic/OpenCap0516.gif" width=320>
 
 
 <br>
