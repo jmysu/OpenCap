@@ -5,7 +5,7 @@
 #### Application for tuning OpenCV4 filters, with Qt5...<br>
 Adjust your filters under main/helper/_ProcessingFrame.cpp...<br>
 Currently w/ Gray, Flip, Blur, Dilate, Erode, Canny, HSV segment/Histogram, MacBeth colorcheck, PCA, GrabCut <br>
-
+Also adds TCPIP send capability for transfering pixmap via networks...<br>
 <img src="pic/OpenCapMac.png" width=320> <img src="pic/OpenCap0516.gif" width=320>
 
 
