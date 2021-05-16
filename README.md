@@ -2,6 +2,7 @@
 ### OpenCV4 Capture Utility w/ QT5
 <br>
 Application for tuning OpenCV4 filters, with Qt5...<br>
+Adjust your filters under main/helper/_ProcessingFrame.cpp...<br>
 <img src="pic/OpenCap0516.gif" width=320>
 
 
@@ -10,4 +11,8 @@ Application for tuning OpenCV4 filters, with Qt5...<br>
 <br>
 
 ## References <br>
-  -[MultiThreaded OpenCV Capture](https://code.google.com/archive/p/qt-opencv-multithreaded/wikis/Documentation.wiki) OpenCV MultiThreaded Capture<br>
+  -[QtEVM](https://github.com/wzpan/QtEVM) Qt EVM.
+  -[RVM](kontakt@jens-schindel.de) Realtime Video Magnification. 
+  -[RangeSlider](https://github.com/nasafix-nasser/Qt-RangeSlider/) TwoWay Qt RangeSlider.
+  -[OpenCV Multithread Capture](<https://github.com/nickdademo/qt-opencv-multithreaded) MultiThreaded OpenCV capture!
+  
