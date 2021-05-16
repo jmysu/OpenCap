@@ -2,7 +2,7 @@
 ### OpenCV4 Capture Utility w/ QT5
 <br>
 
-#### Application for tuning OpenCV4 filters, with Qt5...<br>
+#### Application for tuning OpenCV4 filters, with Qt5/Camera/Video/Image...<br>
 Adjust your filters under main/helper/_ProcessingFrame.cpp...<br><br>
 Option filters: Gray, Flip, Blur, Dilate, Erode, Canny, HSV segment/Histogram, MacBeth colorcheck, PCA, GrabCut... <br>
 Also adds TCPIP send capability for transfering pixmap via networks...<br>
