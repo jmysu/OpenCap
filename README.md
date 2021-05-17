@@ -18,4 +18,4 @@ Also adds TCPIP send capability for transfering pixmap via networks...<br>
   -[RVM](https://github.com/tschnz/Live-Video-Magnification) Realtime Video Magnification. <br>
   -[RangeSlider](https://github.com/nasafix-nasser/Qt-RangeSlider/) TwoWay Qt RangeSlider. <br>
   -[OpenCV Multithread Capture](https://github.com/nickdademo/qt-opencv-multithreaded) MultiThreaded OpenCV capture! <br>
-  -[MeanShift](http://qiankanglai.me/2012/03/19/meanshift/) Kanglai Qian: MeanShift w/ OpenCV.<br>
+  -[MeanShift](http://qiankanglai.me/2012/03/19/meanshift/) Kanglai Qian: MeanShift filter/segmentation w/ OpenCV.<br>
