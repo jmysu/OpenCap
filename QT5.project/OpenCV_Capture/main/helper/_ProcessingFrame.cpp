@@ -24,10 +24,12 @@
 /* along with this program.  If not, see <http://www.gnu.org/licenses/>.            */
 /************************************************************************************/
 // Qt
-#include "main/helper/_ProcessingFrame.h"
-
 #include <QCoreApplication>
 #include <QSettings>
+//
+#include "main/helper/_ProcessingFrame.h"
+#include "main/helper/MeanShift.h"
+
 /*
    void saveSettings()
    {
@@ -336,10 +338,29 @@ void cvProcessFrame(cv::Mat *f, ImageProcessingFlags flags, ImageProcessingSetti
    drawContours(*f, contours, largest_contour_index, color, 2, LINE_8, hierarchy);
    //-----------------------------------------------------------------------------
  */
-        //Do simple foreground grabcut
-        if (flags.grabcutOn) {
-                cvGrabCut(f, f);
-        }
+        // Do Spatial/Color meanshift
+        if (((*f).channels() >= 3) && (flags.meanshiftOn)) {
+                Mat Img = *f;
+                cv::resize(Img, Img, cv::Size(), 0.5, 0.5);                               //reduce to 1/4 for faster processing
+                // Convert color from BGR to Lab
+                cvtColor(Img, Img, COLOR_BGR2Lab);
+                // Initilize Mean Shift with spatial bandwith and color bandwith
+                //MeanShift MSProc(8, 16);
+                MeanShift MSProc(10, 16);
+                // Filtering Process
+                MSProc.MSFiltering(Img);
+                // Segmentation Process include Filtering Process (Region Growing)
+                //MSProc.MSSegmentation(Img);
+
+		// Convert color from Lab to BGR
+		//cv::resize(Img, Img, cv::Size(), 2, 2); //do we need to gain back the original size?
+		cvtColor(Img, *f, COLOR_Lab2BGR);
+	}
+
+	//Do simple foreground grabcut
+	if (flags.grabcutOn) {
+		cvGrabCut(f, f);
+	}
 
 	// Do PCA
 	if (flags.pcaOn) {

@@ -223,7 +223,7 @@ void ProcessingThread::updateImageProcessingFlags(struct ImageProcessingFlags fl
 	this->imgProcFlags.flipOn = flags.flipOn;
 	this->imgProcFlags.blurOn = flags.blurOn;
 	this->imgProcFlags.morphOn = flags.morphOn;
-	qDebug() << "Morph:" << flags.morphOn << imgProcSettings.morphOption;
+	//qDebug() << "Morph:" << flags.morphOn << imgProcSettings.morphOption;
 	this->imgProcFlags.dilateOn = flags.dilateOn;
 	this->imgProcFlags.erodeOn = flags.erodeOn;
 	this->imgProcFlags.cannyOn = flags.cannyOn;
@@ -232,6 +232,7 @@ void ProcessingThread::updateImageProcessingFlags(struct ImageProcessingFlags fl
 	this->imgProcFlags.pcaOn = flags.pcaOn;
 	this->imgProcFlags.colorcheckerOn = flags.colorcheckerOn;
 	this->imgProcFlags.grabcutOn = flags.grabcutOn;
+	this->imgProcFlags.meanshiftOn = flags.meanshiftOn;
 
 	processingBuffer.clear();
 	//magnificator.clearBuffer();

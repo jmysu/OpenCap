@@ -521,6 +521,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="checkBoxMeanShift">
+            <property name="text">
+             <string>MeanShift</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="checkBoxPCA">
             <property name="text">
              <string>PCA</string>

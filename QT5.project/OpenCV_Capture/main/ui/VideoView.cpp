@@ -677,6 +677,12 @@ void VideoView::on_checkBoxGrabCut_clicked(bool checked)
 	imgProcFlags.grabcutOn = checked;
 	emit newImageProcessingFlags(imgProcFlags);
 }
+
+void VideoView::on_checkBoxMeanShift_clicked(bool checked)
+{
+	imgProcFlags.meanshiftOn = checked;
+	emit newImageProcessingFlags(imgProcFlags);
+}
 //-----------------------------------------------------------------------------
 // Settings
 //-----------------------------------------------------------------------------
@@ -856,5 +862,7 @@ void VideoView::on_checkBoxHsvEqualize_clicked(bool checked)
 
 	emit newImageProcessingFlags(imgProcFlags);
 }
+
+
 
 

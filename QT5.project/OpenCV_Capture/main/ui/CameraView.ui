@@ -434,6 +434,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QCheckBox" name="checkBoxMeanShift">
+          <property name="text">
+           <string>MeanShift</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="checkBoxGrabCut">
           <property name="text">
            <string>GrabCut</string>

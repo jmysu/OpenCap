@@ -133,6 +133,8 @@ private slots:
 	void on_buttonMorphGradient_clicked();
 	void on_buttonShotSend_clicked();
 
+	void on_checkBoxMeanShift_clicked(bool checked);
+
 signals:
 	void newImageProcessingFlags(struct ImageProcessingFlags);
 	void newProcessingSettings(struct ImageProcessingSettings);

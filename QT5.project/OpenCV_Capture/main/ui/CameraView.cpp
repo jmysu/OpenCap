@@ -589,6 +589,14 @@ void CameraView::on_checkBoxColorChecker_clicked(bool checked)
 	emit newImageProcessingFlags(imgProcFlags);
 }
 
+//MeanShift
+void CameraView::on_checkBoxMeanShift_clicked(bool checked)
+{
+	imgProcFlags.meanshiftOn = checked;
+	emit newImageProcessingFlags(imgProcFlags);
+}
+
+
 void CameraView::on_checkBoxGrabCut_clicked(bool checked)
 {
 	imgProcFlags.grabcutOn = checked;
@@ -683,6 +691,7 @@ void CameraView::on_buttonShotSendCam_clicked()
 		}
 	}
 }
+
 
 
 

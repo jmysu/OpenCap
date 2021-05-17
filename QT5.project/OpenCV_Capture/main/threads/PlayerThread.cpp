@@ -370,6 +370,7 @@ void PlayerThread::updateImageProcessingFlags(struct ImageProcessingFlags flags)
 	this->imgProcFlags.pcaOn = flags.pcaOn;
 	this->imgProcFlags.colorcheckerOn = flags.colorcheckerOn;
 	this->imgProcFlags.grabcutOn = flags.grabcutOn;
+	this->imgProcFlags.meanshiftOn = flags.meanshiftOn;
 
 	//qDebug() << this->imgProcFlags.hsvHistogramOn;
 

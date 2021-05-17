@@ -1,6 +1,6 @@
 QT += core gui widgets network
 
-CONFIG += c++11
+CONFIG += c++14
 
 TARGET = opencvCap
 TEMPLATE = app
@@ -42,6 +42,7 @@ INCLUDEPATH += $$PWD/main \
 
 SOURCES += main/main.cpp \
     main/helper/MatToQImage.cpp \
+    main/helper/MeanShift.cpp \
     main/helper/MyUtils.cpp \
     main/helper/RangeSlider.cpp \
     main/helper/SharedImageBuffer.cpp \
@@ -61,6 +62,7 @@ SOURCES += main/main.cpp \
 HEADERS += \
     main/helper/ComplexMat.h \
     main/helper/MatToQImage.h \
+    main/helper/MeanShift.h \
     main/helper/MyUtils.h \
     main/helper/RangeSlider.h \
     main/helper/SharedImageBuffer.h \

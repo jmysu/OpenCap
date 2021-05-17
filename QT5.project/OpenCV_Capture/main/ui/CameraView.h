@@ -119,6 +119,8 @@ private slots:
 	void on_buttonShotSendCam_clicked();
 
 
+	void on_checkBoxMeanShift_clicked(bool checked);
+
 signals:
 	void newImageProcessingFlags(struct ImageProcessingFlags);
 	void newProcessingSettings(struct ImageProcessingSettings);
