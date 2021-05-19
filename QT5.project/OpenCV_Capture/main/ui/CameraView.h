@@ -35,7 +35,7 @@
 #include "main/threads/ProcessingThread.h"
 #include "main/other/Structures.h"
 #include "main/helper/SharedImageBuffer.h"
-#include "main/ui/MagnifyOptions.h"
+
 #include "main/ui/FrameLabel.h"
 #include "helper/tcpsendpix.h"
 
