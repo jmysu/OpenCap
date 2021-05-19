@@ -427,6 +427,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QCheckBox" name="checkBoxCartoon">
+          <property name="text">
+           <string>Cartoon</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="checkBoxColorChecker">
           <property name="text">
            <string>ColorChecker</string>

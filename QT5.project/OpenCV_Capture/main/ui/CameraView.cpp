@@ -596,6 +596,11 @@ void CameraView::on_checkBoxMeanShift_clicked(bool checked)
 	emit newImageProcessingFlags(imgProcFlags);
 }
 
+void CameraView::on_checkBoxCartoon_clicked(bool checked)
+{
+	imgProcFlags.cartoonOn = checked;
+	emit newImageProcessingFlags(imgProcFlags);
+}
 
 void CameraView::on_checkBoxGrabCut_clicked(bool checked)
 {
@@ -691,6 +696,8 @@ void CameraView::on_buttonShotSendCam_clicked()
 		}
 	}
 }
+
+
 
 
 

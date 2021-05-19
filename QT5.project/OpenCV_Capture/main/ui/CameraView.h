@@ -121,6 +121,8 @@ private slots:
 
 	void on_checkBoxMeanShift_clicked(bool checked);
 
+	void on_checkBoxCartoon_clicked(bool checked);
+
 signals:
 	void newImageProcessingFlags(struct ImageProcessingFlags);
 	void newProcessingSettings(struct ImageProcessingSettings);

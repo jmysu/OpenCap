@@ -683,6 +683,12 @@ void VideoView::on_checkBoxMeanShift_clicked(bool checked)
 	imgProcFlags.meanshiftOn = checked;
 	emit newImageProcessingFlags(imgProcFlags);
 }
+
+void VideoView::on_checkBoxCartoon_clicked(bool checked)
+{
+	imgProcFlags.cartoonOn = checked;
+	emit newImageProcessingFlags(imgProcFlags);
+}
 //-----------------------------------------------------------------------------
 // Settings
 //-----------------------------------------------------------------------------
@@ -862,6 +868,8 @@ void VideoView::on_checkBoxHsvEqualize_clicked(bool checked)
 
 	emit newImageProcessingFlags(imgProcFlags);
 }
+
+
 
 
 

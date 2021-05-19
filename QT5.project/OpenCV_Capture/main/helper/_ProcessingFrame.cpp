@@ -180,6 +180,50 @@ void cvGrabCut(cv::Mat *f, cv::Mat *o)
 	// Using mask to cut foreground
 	foregroundImg.copyTo(*o, MOGMask);
 }
+//
+//https://github.com/zerenlu/cartoon
+//
+void cartoonifyImage(const Mat &srcColor, Mat &dst)
+{
+	Mat gray;
+	if (srcColor.channels() >= 3) cvtColor(srcColor, gray, COLOR_BGR2GRAY);
+	else gray = srcColor;
+
+	const int MEDIAN_BLUR_FILTER_SIZE = 11;
+	medianBlur(gray, gray, MEDIAN_BLUR_FILTER_SIZE);
+	Mat edges;
+	const int LAPLACIAN_FILTER_SIZE = 5;
+	Laplacian(gray, edges, CV_8U, LAPLACIAN_FILTER_SIZE);
+
+	Mat mask;
+	//const int EDGES_THRESHOLD = 80;
+	threshold(edges, mask, 80, 255, THRESH_BINARY_INV);
+
+	Size size = srcColor.size();
+	Size smallSize;
+	smallSize.width = size.width >> 1;
+	smallSize.height = size.height >> 1;
+	Mat smallImg;
+	//Mat smallImg = Mat(smallSize, CV_8UC3);
+	//resize(srcColor, smallImg, smallSize, 0, 0, INTER_LINEAR);
+	resize(srcColor, smallImg, smallSize, .5, .5);
+
+	Mat tmp = Mat(smallSize, CV_8UC3);
+	int repetitions = 7;//repetition for strong cartoon effect
+	for (int i = 0; i < repetitions; i++) {
+		int ksize = 7;   //filter size
+		double sigmaColor = 12;//filter color strength
+		double sigmaSpace = 8;//spatial strength
+		bilateralFilter(smallImg, tmp, ksize, sigmaColor, sigmaSpace);
+		bilateralFilter(tmp, smallImg, ksize, sigmaColor, sigmaSpace);
+	}
+
+	Mat bigImg;
+	//resize(smallImg, bigImg, size, 0, 0, INTER_LINEAR);
+	resize(smallImg, bigImg, size, 2, 2);
+	dst.setTo(0);
+	bigImg.copyTo(dst, mask);
+}
 /*  cvProcessFrame
  *
  *    main frame processing at here:
@@ -338,29 +382,35 @@ void cvProcessFrame(cv::Mat *f, ImageProcessingFlags flags, ImageProcessingSetti
    drawContours(*f, contours, largest_contour_index, color, 2, LINE_8, hierarchy);
    //-----------------------------------------------------------------------------
  */
-        // Do Spatial/Color meanshift
-        if (((*f).channels() >= 3) && (flags.meanshiftOn)) {
-                Mat Img = *f;
-                cv::resize(Img, Img, cv::Size(), 0.5, 0.5);                               //reduce to 1/4 for faster processing
-                // Convert color from BGR to Lab
-                cvtColor(Img, Img, COLOR_BGR2Lab);
-                // Initilize Mean Shift with spatial bandwith and color bandwith
-                //MeanShift MSProc(8, 16);
-                MeanShift MSProc(10, 16);
-                // Filtering Process
-                MSProc.MSFiltering(Img);
-                // Segmentation Process include Filtering Process (Region Growing)
-                //MSProc.MSSegmentation(Img);
+        // Do cartoon
+        if (flags.cartoonOn) {
+                cartoonifyImage(*f, *f);
+        }
+
+	// Do Spatial/Color meanshift
+	if (((*f).channels() >= 3) && (flags.meanshiftOn)) {
+		Mat Img = *f;
+		cv::resize(Img, Img, cv::Size(), 0.5, 0.5);                                                                                                                                                                                                                                                           //reduce to 1/4 for faster processing
+		// Convert color from BGR to Lab
+		cvtColor(Img, Img, COLOR_BGR2Lab);
+		// Initilize Mean Shift with spatial bandwith and color bandwith
+		//MeanShift MSProc(8, 16);
+		MeanShift MSProc(10, 16);
+		// Filtering Process
+		MSProc.MSFiltering(Img);
+		// Segmentation Process include Filtering Process (Region Growing)
+		//MSProc.MSSegmentation(Img);
 
 		// Convert color from Lab to BGR
 		//cv::resize(Img, Img, cv::Size(), 2, 2); //do we need to gain back the original size?
 		cvtColor(Img, *f, COLOR_Lab2BGR);
 	}
 
-	//Do simple foreground grabcut
+	// Do simple foreground grabcut
 	if (flags.grabcutOn) {
 		cvGrabCut(f, f);
 	}
+
 
 	// Do PCA
 	if (flags.pcaOn) {

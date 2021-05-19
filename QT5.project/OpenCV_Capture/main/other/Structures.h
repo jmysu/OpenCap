@@ -86,6 +86,7 @@ struct ImageProcessingFlags {
 	bool colorcheckerOn;
 	bool grabcutOn;
 	bool meanshiftOn;
+	bool cartoonOn;
 
 	ImageProcessingFlags() :
 		grayscaleOn(false),
@@ -100,7 +101,8 @@ struct ImageProcessingFlags {
 		pcaOn(false),
 		colorcheckerOn(false),
 		grabcutOn(false),
-		meanshiftOn(false)
+		meanshiftOn(false),
+		cartoonOn(false)
 	{
 	}
 };

@@ -233,6 +233,7 @@ void ProcessingThread::updateImageProcessingFlags(struct ImageProcessingFlags fl
 	this->imgProcFlags.colorcheckerOn = flags.colorcheckerOn;
 	this->imgProcFlags.grabcutOn = flags.grabcutOn;
 	this->imgProcFlags.meanshiftOn = flags.meanshiftOn;
+	this->imgProcFlags.cartoonOn = flags.cartoonOn;
 
 	processingBuffer.clear();
 	//magnificator.clearBuffer();
